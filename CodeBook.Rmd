@@ -6,11 +6,11 @@ output: html_document
 ---
 
 
-"subject"  
-        Volunteer who performed the six activities wearing a smartphone. 
+subject      
+        Volunteer who performed the six activities wearing a smartphone.     
                 1 ... 30 Integer
         
-"activities"
+activities
         
 signal 
         
