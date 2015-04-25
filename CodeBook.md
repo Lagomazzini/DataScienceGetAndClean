@@ -1,0 +1,55 @@
+---
+title: "CodeBook for tidy data UCI_tidy.txt "
+author: "Juan Carlos"
+date: "20 de abril de 2015"
+output: html_document
+---
+
+
+subject      
+        Volunteer who performed the six activities wearing a smartphone.     
+                1 ... 30 Integer
+        
+activities
+        
+signal 
+        
+                tBodyAcc         
+                tBodyAcc         
+                tBodyAcc         
+                tGravityAcc      
+                tGravityAcc      
+                tGravityAcc      
+                tBodyAccJerk     
+                tBodyGyro        
+                tBodyGyroJerk    
+                tBodyAccMag      
+                tGravityAccMag   
+                tGravityAccMag   
+                tGravityAccMag   
+                tBodyAccJerkMag  
+                tBodyAccJerkMag  
+                tBodyAccJerkMag  
+                tBodyGyroMag     
+                tBodyGyroMag     
+                tBodyGyroMag     
+                tBodyGyroJerkMag 
+                fBodyAcc         
+                fBodyAccJerk     
+                fBodyAccJerk     
+                fBodyAccJerk     
+                fBodyGyro        
+                fBodyGyro        
+                fBodyGyro        
+                fBodyAccMag      
+                fBodyAccJerkMag  
+                fBodyGyroMag     
+                fBodyGyroMag     
+                fBodyGyroMag     
+                fBodyGyroJerkMag 
+
+
+coordinate
+        is used to denote 3-axial signals in the X, Y and Z directions
+"mean"
+"std" 
