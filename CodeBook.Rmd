@@ -1,19 +1,46 @@
 ---
+output: html_document
+---
+---
 title: "CodeBook for tidy data UCI_tidy.txt "
 author: "Juan Carlos"
 date: "20 de abril de 2015"
 output: html_document
----
+---  
 
+&nbsp;  
+&nbsp;
 
-subject      
-        Volunteer who performed the six activities wearing a smartphone.     
-                1 ... 30 Integer
+#### LIST OF VARIABLES  
+              
+
+&nbsp;  
+&nbsp;  
+  
+#### 1. subject  
+
+Volunteer who performed the six activities wearing a smartphone.  
+
+        1 ... 30 .Integer subject  
         
-activities
-        
-signal 
-        
+&nbsp;  
+
+#### 2. activities
+
+Activities perform by each subject. See subject variable
+
+        WALKING
+        WALKING_UPSTAIRS
+        WALKING_DOWNSTAIRS
+        SITTING
+        STANDING
+        LAYING
+&nbsp;  
+
+#### 3. signal
+
+33 signal types obtained from the accelerometer and gyroscope. The first letters *t* and *f* indicate time domain and frequency domain from *body* and *Gravity* signals. *Acc* is the acceleration, *Gyro* from the gyroscope and *Jerk* the derivative in time from the acceleration. *Mag* denotes the magnitude of the XYZ vector.  
+
                 tBodyAcc         
                 tBodyAcc         
                 tBodyAcc         
@@ -49,7 +76,30 @@ signal
                 fBodyGyroJerkMag 
 
 
-coordinate
-        is used to denote 3-axial signals in the X, Y and Z directions
-"mean"
-"std" 
+
+&nbsp;  
+
+#### 4. coordinate  
+
+X, Y and Z signal directions
+
+        X..Y..Z  .axis coordinates
+        "blank"  .no coordinate assigned to that signal
+&nbsp;  
+
+
+#### 5. mean        
+
+normalised mean value by averaging all mean values from different measurements.
+
+        [-1,1] .normalised number
+
+&nbsp;  
+
+#### 6. std  
+
+standard deviation value of all mean values from different measurements.
+
+        [-1,1] .normalised number
+
+ 
