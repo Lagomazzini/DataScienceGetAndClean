@@ -1,0 +1,19 @@
+---
+title: "G&C_Project"
+author: "Juan Carlos"
+date: "19 de abril de 2015"
+output: html_document
+---
+
+This file describes...
+
+This repo contains:  
+
+1) a tidy data set called *UCI_tidy.txt*. Variables   
+2) a code book called *CodeBook.rmd* that describes the variables of the tidy data
+3) a script called *run_analysis* used to transform the original data
+4) a folder with the original data called *UCI HAR dataset*
+
+
+   
+
