@@ -1,18 +1,36 @@
 ---
-title: "G&C_Project"
+title: "R Script description (G&C_Project)"
 author: "Juan Carlos"
 date: "19 de abril de 2015"
 output: html_document
 ---
 
-This file describes...
+The script *"run_analysis.R"* in this repository will create data frames (named Table 1..5) which correspond to each step described in the STUDY DESIGN paragraph in the *CodeBook.Rmd* file. A final output file named "UCI_tidy.txt" will be created in the working directory.
 
-This repo contains:  
+&nbsp;  
 
-1) a tidy data set called *UCI_tidy.txt*. Variables   
-2) a code book called *CodeBook.rmd* that describes the variables of the tidy data
-3) a script called *run_analysis* used to transform the original data
-4) a folder with the original data called *UCI HAR dataset*
+The script works as follows:
+
+- Three necessary packages are loaded for analysis: *dplyr*, *tidyr* and *reshape2*.
+
+- Two data frames are created from the original data *UCI HAR dataset*: *features* with two columns (column 2 contains the names of the signals); and *activities* that has two columns named "index" and "activities". The latter is used to replace the labels with activities names in the final data frame. 
+
+- Two data frames *Table_test* and *Table_train* from the original files are created.
+
+- Table1 data frame is created. It is the result of binding *Table_test* and *Table_train*. The first two columns contain the subject number (person who performs the activities) and the signals (from the accelerometer and gyroscope), respectively. 
+
+- Table 2 is created by selecting only the mean() and std() from all the signals collected. For this purpose, a TblNames character vector is created. *grpe* function will find the indexes corresponding to only the signals containing mean() and std().
+
+- Table 3 is created using *merge* function to match the activity names with the labels. The table is also arranged by subject and activities. For this purpose the names of the variables are created previously. This creates already the Table4 corresponding to the next point.
+
+- Table 4 already created. This table contains 68 columns and it is transformed in the next step into a tidy format.
+
+- Since column names from 3 to 68 correspond each to two or three different observations (signal + mean or std + coordinate), the data frame is transformed to six columns each with *subject*, *activities*, *signal*, *coordinate*, *mean* and *std* (standard deviation) variables. This transformation is performed using different features of *dplyr*, *tidyr* and *reshape2* packages creating the Table5 in a tidy format. First all, signals all gathered in a column. Secondly, the three observations are separated in three columns and finally the dcast allows to calculate the average value (mean) for each different signal, activity and subject. Some blank values are created when the coordinate did not exist in the signals. 
+
+- The final extra step is organising the data from *signal* variable in the same way as the original order presented in the *features_info.txt* file. This is made by creating an *order_signal* data frame reading the *features_info.txt*, then transforming the values from *signal* (Table5) into a factor, and finally naming the levels in the order indicated by *order_signal*.
+
+- As the final step, a *"UCI_tidy.txt"* is created with the tidy data in the working directory. This is made by using *write.lines* function.
+
 
 
    

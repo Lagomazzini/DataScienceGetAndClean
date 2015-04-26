@@ -11,23 +11,66 @@ output: html_document
 &nbsp;  
 &nbsp;
 
-#### LIST OF VARIABLES  
-              
+The code presented in this repository perform a transformation from the original "Human Activity Recognition Using Smartphones Data Set" into a tidy data. The output is a text file containing an independent tidy data set with the average of each variable for each activity and each subject.
 
 &nbsp;  
+
+#### RAW DATA
+
+The raw data was collected from the embedded accelerometer and gyroscope of the Samsung Galaxy S smartphone. A full description of this dataset is available at the site where the data was obtained: 
+
+
+<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
+
+&nbsp;
+
+The original dataset can be downloaded from the next site:
+
+<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#>
+
 &nbsp;  
+
+#### INSTRUCTION LIST
+
+1. Download the original data. This is a folder named *UCI HAR dataset*. 
+2. Copy it into a working directory
+2. Copy the *run_analysis.R* file in that directory
+3. In R console type: ``source("run_analysis.R")``
+
+These step will transform the original data in tidy data and an output text file as described below
+
+&nbsp;  
+
+#### STUDY DESIGN
+
+The *"run_analysis.R"* script included in the repository make tidy dataset from original "UCI HAR Dataset" following the next steps:
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The tidy data created is a data frame with 6 variables (columns) and 5940 observations (rows). The 6 variables are described below.
+
+The script create a final output tidy dataset in the working directory called *"UCI_tidy.txt"*. 
+
+&nbsp;  
+
+####   CODE BOOK  
+
   
-#### 1. subject  
+##### 1. subject  
 
 Volunteer who performed the six activities wearing a smartphone.  
 
-        1 ... 30 .Integer subject  
+        1 ... 30 .Integer represents the subject  
         
 &nbsp;  
 
-#### 2. activities
+##### 2. activities
 
-Activities perform by each subject. See subject variable
+Activities perform by each subject. 
 
         WALKING
         WALKING_UPSTAIRS
@@ -37,9 +80,9 @@ Activities perform by each subject. See subject variable
         LAYING
 &nbsp;  
 
-#### 3. signal
+##### 3. signal
 
-33 signal types obtained from the accelerometer and gyroscope. The first letters *t* and *f* indicate time domain and frequency domain from *body* and *Gravity* signals. *Acc* is the acceleration, *Gyro* from the gyroscope and *Jerk* the derivative in time from the acceleration. *Mag* denotes the magnitude of the XYZ vector.  
+33 signal types obtained from the accelerometer and gyroscope. The first letters *t* and *f* indicate time domain and frequency domain from *body* and *Gravity* signals. *Acc* is the acceleration signal, *Gyro* the gyroscope signal and *Jerk* the derivative in time from the acceleration. *Mag* denotes the magnitude of the XYZ vector.  
 
                 tBodyAcc         
                 tBodyAcc         
@@ -79,7 +122,7 @@ Activities perform by each subject. See subject variable
 
 &nbsp;  
 
-#### 4. coordinate  
+##### 4. coordinate  
 
 X, Y and Z signal directions
 
@@ -88,17 +131,17 @@ X, Y and Z signal directions
 &nbsp;  
 
 
-#### 5. mean        
+##### 5. mean        
 
-normalised mean value by averaging all mean values from different measurements.
+value by averaging all mean values from different measurements.
 
-        [-1,1] .normalised number
+        [-1,1] .normalised numbers
 
 &nbsp;  
 
-#### 6. std  
+##### 6. std  
 
-standard deviation value of all mean values from different measurements.
+value by averaging all standard deviation values from all mean values.
 
         [-1,1] .normalised number
 
